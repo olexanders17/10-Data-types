@@ -47,23 +47,19 @@ function getQuanOfUniqueElements(arr) {
     //var qtyUniqElements = 0;
     var uniqElementsArray = [];
     for (var i = 0; i < arr.length; i++) {
-        var elem = +arr[i];
+        var elem = arr[i];
         if (!isNaN(elem)) {
-            if (uniqElementsArray.length == 0) {
-                uniqElementsArray.push(elem)
-            } else {
-                var isUniq = true;
-                for (var j = 0; j < uniqElementsArray.length; j++) {
-                    if (elem == uniqElementsArray[j]) {
-                        isUniq = false;
-                    }
 
+            var isUniq = true;
+            for (var j = 0; j < uniqElementsArray.length; j++) {
+                if (elem === uniqElementsArray[j]) {
+                    isUniq = false;
                 }
 
-                if (isUniq) {
-                    uniqElementsArray.push(elem);
-                }
+            }
 
+            if (isUniq) {
+                uniqElementsArray.push(elem);
             }
 
 
@@ -76,7 +72,8 @@ function getQuanOfUniqueElements(arr) {
 
 
 console.log("Answer 3");
-console.log(getQuanOfUniqueElements(['2', '2', '34', '-1', '34', 2, 45]));
+console.log(getQuanOfUniqueElements(['2', '2', '34', '-1', 34, 2, 45]));
+
 
 
 /*
@@ -103,7 +100,7 @@ function getQuanOfUniqueCharacters(str) {
         }
 
     });
-    return strUniqArr;
+    return strUniqArr.length;
 }
 
 console.log("Answer 4");
@@ -152,12 +149,12 @@ console.log("list of pensioners : " + getPensionersName(people));
 
 
 function getBiggestPossibleLoss(data) {
-    var tmpLoss=0;
-    for (var i = 1; i < data.length ; i++) {
+    var tmpLoss = 0;
+    for (var i = 1; i < data.length; i++) {
         for (var j = 2; j < data.length; j++) {
 
-            if ((data[j]-data[i])<tmpLoss) {
-                tmpLoss=data[j]-data[i];
+            if ((data[j] - data[i]) < tmpLoss) {
+                tmpLoss = data[j] - data[i];
             }
 
 
@@ -165,11 +162,11 @@ function getBiggestPossibleLoss(data) {
 
     }
 
-return tmpLoss;
+    return tmpLoss;
 }
 console.log("Answer 6");
-var stockData = [3, 2, 4, 2, 1, 5,10,7];
-console.log("The Biggest Possible Loss: "+getBiggestPossibleLoss(stockData));
+var stockData = [3, 2, 4, 2, 1, 5, 10, 7];
+console.log("The Biggest Possible Loss: " + getBiggestPossibleLoss(stockData));
 
 
 
